@@ -4,28 +4,34 @@ class Livre:
         self.auteur = auteur
         self.annee = annee
         
-    def affiche_details(self):
+    def afficher_details(self):
         print(f"{self.titre} : {self.auteur} :{self.annee}")
         
         
 class Bibliotheque:
-    def __init__(self, titre):
-        self.titre = titre
+    def __init__(self):
+        self.livre = []
         
-    def ajouter_livre(self):
-        print(f"{self.titre.livre}")
+    def ajouter_livre(self, livre):
+        self.livre.append(livre)
         
     def afficher_catalogue(self):
-        print(f" {self.titre.livre} : {self.auteur} : {self.annee} ")
+        for livre in self.livre:
+            livre.afficher_details()
         
 # Creation des objets livres
-print("afficher_catalogue complet")
-livre = Livre = "Onjam_pilafila"
-auteur = Auteur = "IPA"
-annee = Annee = 2001
+livre1 = Livre("Le Petit Prince", "Antoine", 1943)
+livre2 = Livre("Les Miserables", "Victor Hugo", 1862)
+livre3 = Livre("L'Etranger", " Albert Camus", 1942)
 
+# Creation de la bibliotheque
+bibliotheque = Bibliotheque()
 
-# Affiche le catalogue complet
-print("titre: Onjam_pilafila")
-print("auteur: IPA")
-print("annee: 2001")
+# Ajouter des livres a la bibliotheque
+bibliotheque.ajouter_livre(livre1)
+bibliotheque.ajouter_livre(livre2)
+bibliotheque.ajouter_livre(livre3)
+
+# Afficher le catalogue complet
+bibliotheque.afficher_catalogue()
+
